@@ -22,12 +22,12 @@ export default function UserInfo(){
    <View style={styles.fotoPerfilContainer}>
     <AntDesign name="user" style={styles.fotoPerfil} />
    </View>
-   <Text>{authNome}</Text>
-   <View>
-    <Text>E-mail</Text>
-    <Text>{authEmail}</Text>
-    <Text>Senha</Text>
-    <Text>{authSenha}</Text>
+   <Text style={styles.username}>{authNome}</Text>
+   <View style={styles.userInfo}>
+    <Text style={styles.infoTitle}>E-mail</Text>
+    <Text style={styles.info}>{authEmail}</Text>
+    <Text style={styles.infoTitle}>Senha</Text>
+    <Text style={styles.info}>{authSenha}</Text>
    </View>
   </Animatable.View>
  )
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
  },
 
  titulo: {
+  marginVertical: 18,
   textAlign: "center",
   fontSize: 26,
   color: colors.azulEscuro,
@@ -63,4 +64,30 @@ const styles = StyleSheet.create({
   fontSize: 56,
   color: colors.rosa,
  },
+
+ username: {
+  fontSize: 18,
+  color: colors.rosa,
+  fontFamily: fonts.SemiBold,
+  alignSelf: 'center',
+ },
+
+ userInfo: {
+  alignSelf: 'center',
+  marginTop: 25
+ },
+
+ infoTitle: {
+  marginTop: 25,
+  alignSelf: 'center',
+  fontSize: 16,
+  color: colors.rosa,
+  fontFamily: fonts.Regular,
+ },
+
+ info: {
+  alignSelf: 'center',
+  fontSize: 18,
+  fontFamily: fonts.Regular
+ }
 })

@@ -20,7 +20,7 @@ export default function Perfil(){
    <Text style={styles.username}>{nome}</Text>
    <ButtonLayout title="Preferências" />
    <ButtonLayout title="Informações pessoais" />
-   <ButtonLayout style={styles.posic} title="Receitas salvas" />
+   <ButtonLayout style={styles.posic} title="Receitas salvas" rota="/receitaSalva" />
    <ButtonLayout style={styles.posic} title="Configurações" rota="/configuracoes" />
    <TouchableOpacity style={styles.button}>
     <Text style={styles.buttonText}>Sair</Text>
