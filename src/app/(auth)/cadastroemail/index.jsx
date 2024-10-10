@@ -4,9 +4,14 @@ import EtapaTitle from "../../../assets/components/EtapaTitle";
 import { fonts } from "../../../assets/fonts";
 import { useRouter } from "expo-router";
 import { Entypo, MaterialIcons } from "@expo/vector-icons"
+import {useState} from "react"
 
 export default function CadastroEmail(){
   const router = useRouter()
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
+
   return(
     <View style={styles.container}>
       <EtapaTitle titulo="Etapa 4:" subtitulo="Cadastro" />
@@ -19,6 +24,8 @@ export default function CadastroEmail(){
           <TextInput
           style={styles.input}
           placeholder="Nome de usuário..."
+          value={username}
+          onChangeText={setUsername}
           />
         </View>
         <View style={styles.inputContainer}>
@@ -26,6 +33,8 @@ export default function CadastroEmail(){
           <TextInput
           style={styles.input}
           placeholder="Email..."
+          value={email}
+          onChangeText={setEmail}
           />
         </View>
         <View style={styles.inputContainer}>
@@ -34,6 +43,8 @@ export default function CadastroEmail(){
           style={styles.input}
           placeholder="Senha..."
           secureTextEntry={true}
+          value={senha}
+          onChangeText={setSenha}
           />
         </View>
         <TouchableOpacity 

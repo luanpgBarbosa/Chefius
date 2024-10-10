@@ -1,28 +1,29 @@
 import chapeu from "../../../assets/imgs/chapeu_menu.png"
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity, BackHandler } from "react-native";
 import ButtonLayout from "../../../assets/components/ButtonLayout";
-import { StyleSheet } from "react-native";
 import colors from "../../../assets/colors";
 import { AntDesign } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
 import { fonts } from "../../../assets/fonts";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth";
 
 export default function Perfil(){
- const { nome } = useContext(AuthContext)
+ const { authNome } = useContext(AuthContext)
  return(
   <View style={styles.container}>
    <Image source={chapeu} style={styles.icon} />
    <View style={styles.fotoPerfilContainer}>
     <AntDesign name="user" style={styles.fotoPerfil} />
    </View>
-   <Text style={styles.username}>{nome}</Text>
-   <ButtonLayout title="Preferências" />
+   <Text style={styles.username}>{authNome}</Text>
+   <ButtonLayout title="Preferências" rota="/preferencias" />
    <ButtonLayout title="Informações pessoais" />
    <ButtonLayout style={styles.posic} title="Receitas salvas" rota="/receitaSalva" />
    <ButtonLayout style={styles.posic} title="Configurações" rota="/configuracoes" />
-   <TouchableOpacity style={styles.button}>
+   <TouchableOpacity 
+   style={styles.button}
+   onPress={() => BackHandler.exitApp()}
+   >
     <Text style={styles.buttonText}>Sair</Text>
    </TouchableOpacity>
   </View>

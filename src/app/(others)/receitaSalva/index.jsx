@@ -8,7 +8,7 @@ export default function receitaSalva(){
  return(
   <Animatable.View style={styles.container}>
    <Text style={styles.title}>Receitas salvas</Text>
-   <Text style={styles.conteudo}>Aqui ficará suas receitas</Text>
+   <Text style={styles.conteudo}>Aqui ficarão suas receitas</Text>
   </Animatable.View>
  )
 }
