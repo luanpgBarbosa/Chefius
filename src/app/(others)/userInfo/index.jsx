@@ -10,7 +10,7 @@ import { fonts } from "../../../assets/fonts"
 
 export default function UserInfo(){
  const { authNome, authEmail, authSenha } = useContext(AuthContext)
- 
+
  return(
   <Animatable.View 
   style={styles.container}
@@ -27,7 +27,15 @@ export default function UserInfo(){
     <Text style={styles.infoTitle}>E-mail</Text>
     <Text style={styles.info}>{authEmail}</Text>
     <Text style={styles.infoTitle}>Senha</Text>
-    <Text style={styles.info}>{authSenha}</Text>
+    <View style={styles.altConteiner}>
+      <Text style={styles.info}>{authSenha}</Text>
+      <Text style={styles.infoAlt}>Alterar Senha</Text>
+    </View>
+    {
+      console.log("Deu certo")
+      ? AlterarSenha == true :
+      console.log("Não deu certo")
+    }
    </View>
   </Animatable.View>
  )
@@ -85,9 +93,19 @@ const styles = StyleSheet.create({
   fontFamily: fonts.Regular,
  },
 
+ altConteiner: {
+  flexDirection: 'row',
+  justifyContent: 'space-evenly'
+ },
+
  info: {
   alignSelf: 'center',
   fontSize: 18,
   fontFamily: fonts.Regular
+ },
+
+ infoAlt: {
+  color: colors.rosa,
+  textDecorationLine: "underline",
  }
 })

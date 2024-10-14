@@ -5,7 +5,6 @@ import { fonts } from "../../../assets/fonts";
 import EtapaTitle from "../../../assets/components/EtapaTitle"
 import hamburguer from "../../../assets/imgs/hamburguer.png"
 import { useRouter } from "expo-router";
-import Header from "../../../assets/components/Header";
 
 export default function Etapa2(){
   const router = useRouter()
