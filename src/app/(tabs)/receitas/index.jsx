@@ -1,10 +1,27 @@
 import { View, Text, StyleSheet } from "react-native";
 import colors from "../../../assets/colors";
+import fonts from "../../../assets/fonts"
 
 export default function Receitas(){
  return(
   <View style={styles.container}>
-   <Text style={styles.msg}>Receitas</Text>
+    <View>
+      <Text>Nós queremos te ajudar!</Text>
+      <Text>Entender o que você consome é fundamental para uma vida mais saudável e equilibrada. Por isso, sugestões são disponibilizadas diariamente.</Text>
+      <Text>Receitas abaixo</Text>
+    </View>
+    <View>
+      <Text>Café da manhã</Text>
+    </View>
+    <View>
+      <Text>Almoço</Text>
+    </View>
+    <View>
+      <Text>Café da tarde</Text>
+    </View>
+    <View>
+      <Text>Jantar</Text>
+    </View>
   </View>
  )
 }
@@ -12,13 +29,6 @@ export default function Receitas(){
 const styles = StyleSheet.create({
  container: {
   flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
   backgroundColor: colors.branco,
- },
-
-  msg: {
-   fontSize: 26,
-   color: colors.rosa,
-  },
+ }
 })

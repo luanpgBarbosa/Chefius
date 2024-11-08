@@ -1,13 +1,25 @@
 import * as Animatable from "react-native-animatable"
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert } from "react-native";
 import colors from "../../../assets/colors";
 import { fonts } from "../../../assets/fonts";
 import EtapaTitle from "../../../assets/components/EtapaTitle"
 import hamburguer from "../../../assets/imgs/hamburguer.png"
 import { useRouter } from "expo-router";
+import { useState } from "react";
 
 export default function Etapa2(){
   const router = useRouter()
+  const [peso, setPeso] = useState(null)
+  const [altura, setAltura] = useState(null)
+
+  function CalcularImc(){
+    if(altura != null || peso != null){
+      let imc = (peso / altura**2).toFixed(2)
+      Alert.alert(`O seu IMC é: ${imc}`)
+      router.navigate('/etapa3')
+    }
+  }
+
   return (
     <Animatable.View 
     style={styles.container}
@@ -27,6 +39,8 @@ export default function Etapa2(){
               style={styles.inputContent}
               placeholder="Peso:"
               keyboardType="numeric"
+              value={peso}
+              onChangeText={setPeso}
             />
           </View>
           <View style={styles.inputContainer}>
@@ -34,12 +48,14 @@ export default function Etapa2(){
               style={styles.inputContent}
               placeholder="Altura:"
               keyboardType="numeric"
+              value={altura}
+              onChangeText={setAltura}
             />
           </View>
         </View>
         <TouchableOpacity 
         style={styles.buttonContainer} 
-        onPress={() => router.navigate("etapa3")}
+        onPress={CalcularImc}
         >
           <Text style={styles.buttonText}>Calcular</Text>
         </TouchableOpacity>
@@ -69,7 +85,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: -35,
     fontSize: 18,
-    fontFamily: fonts.Regular,
+    fontFamily: fonts.SemiBold,
   },
 
   infoContainer: {

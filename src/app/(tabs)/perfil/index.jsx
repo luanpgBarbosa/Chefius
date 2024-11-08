@@ -7,6 +7,7 @@ import { fonts } from "../../../assets/fonts";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth";
 import { useRouter } from "expo-router";
+import fotoPerfil from "../../../assets/imgs/foto-perfil.jpeg"
 
 export default function Perfil(){
  const { authNome } = useContext(AuthContext)
@@ -15,9 +16,7 @@ export default function Perfil(){
  return(
   <View style={styles.container}>
    <Image source={chapeu} style={styles.icon} />
-   <View style={styles.fotoPerfilContainer}>
-    <AntDesign name="user" style={styles.fotoPerfil} />
-   </View>
+   <Image source={fotoPerfil} style={styles.fotoPerfil} />
    <Text style={styles.username}>{authNome}</Text>
    <ButtonLayout title="Preferências" rota="/preferencias" />
    <ButtonLayout title="Informações pessoais" rota="/userInfo" />
@@ -45,28 +44,16 @@ const styles = StyleSheet.create({
   marginVertical: 15,
  },
 
- fotoPerfilContainer: {
-  alignSelf: 'center',
-  justifyContent: 'center',
-  alignItems: 'center',
-  fontSize: 120,
-  borderWidth: 5,
-  borderColor: colors.rosa,
-  width: 120,
-  height: 120,
-  borderRadius: 80,
-  marginVertical: 15,
- },
-
  fotoPerfil: {
+  width: 150,
+  borderRadius: 500,
   fontSize: 56,
-  color: colors.rosa,
  },
 
  username: {
   fontSize: 22,
   alignSelf: 'center',
-  marginBottom: 45,
+  marginVertical: 25,
  },
 
  posic: {

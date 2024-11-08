@@ -25,9 +25,6 @@ export default function Login(){
         <TouchableOpacity style={styles.buttonGoogle}>
           <Text style={styles.buttonGoogleText}>Entrar com Google</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonFacebook}>
-          <Text style={styles.buttonFacebookText}>Entrar com Facebook</Text>
-        </TouchableOpacity>
       </View>
     </Animatable.View>
   )
@@ -57,7 +54,6 @@ const styles = StyleSheet.create({
 
   buttonsConteiner: {
     height: 450,
-    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
 
@@ -68,6 +64,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 17,
     backgroundColor: colors.rosa,
+    marginVertical: 55,
   },
 
   buttonEmailText: {

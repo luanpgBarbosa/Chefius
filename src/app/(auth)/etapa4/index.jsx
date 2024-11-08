@@ -26,9 +26,6 @@ export default function Etapa4(){
       <TouchableOpacity style={styles.buttonGoogle}>
         <Text style={styles.buttonGoogleText}>Entrar com Google</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.buttonFacebook}>
-        <Text style={styles.buttonFacebookText}>Entrar com Facebook</Text>
-      </TouchableOpacity>
     </View>
   </Animatable.View>
   )
@@ -58,11 +55,11 @@ const styles = StyleSheet.create({
 
   buttonsConteiner: {
     height: 450,
-    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
 
   buttonEmail: {
+    marginVertical: 55,
     justifyContent: 'center',
     alignItems: 'center',
     width: 240,

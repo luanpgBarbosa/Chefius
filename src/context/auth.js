@@ -3,9 +3,11 @@ import { createContext, useState } from "react";
 export const AuthContext = createContext({})
 
 export default function AuthProvider({ children }){
- const [authNome, setAuthNome] = useState("")
- const [authEmail, setAuthEmail] = useState("")
- const [authSenha, setAuthSenha] = useState("")
+ const [authNome, setAuthNome] = useState("luan")
+ const [authEmail, setAuthEmail] = useState("luan@gmail.com")
+ const [authSenha, setAuthSenha] = useState("1234")
+ const [authIdade, setAuthIdade] = useState("")
+ 
  return(
   <AuthContext.Provider value={{ 
    authNome: authNome,
@@ -13,7 +15,9 @@ export default function AuthProvider({ children }){
    authEmail: authEmail,
    setAuthEmail,
    authSenha: authSenha,
-   setAuthSenha
+   setAuthSenha,
+   authIdade: authIdade,
+   setAuthIdade,
    }}
   >
    {children}
